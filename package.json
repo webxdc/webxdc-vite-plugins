@@ -13,12 +13,13 @@
     "types": "./emulator/webxdc.d.ts",
     "require": "./src/index.js",
     "import": "./src/index.js",
-    "./emulator/webxdc.js": "./emulator/webxdc.js",
+    "./emulator/webxdc.js": "./emulator/webxdc.js"
   },
   "dependencies": {
-    "vite-plugin-zip-pack": "^1.0.5",
     "@vitejs/plugin-legacy": "^4.0.2",
-    "eruda": "^3.0.0"
+    "eruda": "^3.0.0",
+    "vite-plugin-zip-pack": "^1.0.5",
+    "webxdc-dev": "^0.17.0"
   },
   "peerDependencies": {
     "vite": "^4.0.0"
@@ -28,7 +29,6 @@
     "vite": "4.4.9"
   },
   "prettier": {
-    "printWidth": 120,
-    "singleQuote": true
-  },
+    "printWidth": 120
+  }
 }

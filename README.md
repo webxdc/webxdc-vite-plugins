@@ -43,12 +43,12 @@ Use the individual plugins for more control over the build.
 import {
   buildXDC,
   eruda,
-//  injectScript,
+  //  injectScript,
   injectWebxdc,
-//  legacy, // might cause problems in existing projects
-//  webxdcScores,
-} from 'webxdc-vite-plugins';
-import { defineConfig } from 'vite';
+  //  legacy, // might cause problems in existing projects
+  //  webxdcScores,
+} from "webxdc-vite-plugins";
+import { defineConfig } from "vite";
 
 export default defineConfig({
   build: getDefaultViteBuildOptions(),
