@@ -27,8 +27,8 @@ Use `webxdcViteConfig()` for a quick and easy default configuration.
 ```ts
 // vite.config.ts
 
-import { webxdcViteConfig } from webxdc-vite-plugins';
-import { defineConfig } from 'vite';
+import { webxdcViteConfig } from "webxdc-vite-plugins";
+import { defineConfig } from "vite";
 
 export default defineConfig(webxdcViteConfig());
 ```
@@ -44,7 +44,7 @@ import {
   buildXDC,
   eruda,
   //  injectScript,
-  injectWebxdc,
+  mockWebxdc,
   //  legacy, // might cause problems in existing projects
   //  webxdcScores,
 } from "webxdc-vite-plugins";
@@ -52,6 +52,6 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   build: getDefaultViteBuildOptions(),
-  plugins: [buildXDC(), eruda(), injectWebxdc()],
+  plugins: [buildXDC(), eruda(), mockWebxdc()],
 });
 ```

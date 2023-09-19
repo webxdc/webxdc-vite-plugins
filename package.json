@@ -2,7 +2,8 @@
   "name": "webxdc-vite-plugins",
   "version": "0.1.0",
   "scripts": {
-    "dev": "vite --port 3000",
+    "dev-mini": "vite --port 3000",
+    "dev": "concurrently \"npm run dev-mini\" \"webxdc-dev run http://localhost:3000\"",
     "format": "prettier --write .",
     "check": "prettier --check .",
     "build": "vite build"
@@ -11,6 +12,7 @@
   "typings": "./emulator/webxdc.d.ts",
   "dependencies": {
     "@vitejs/plugin-legacy": "^4.0.2",
+    "concurrently": "^8.1.0",
     "eruda": "^3.0.0",
     "vite-plugin-zip-pack": "^1.0.5",
     "webxdc-dev": "^0.17.0"

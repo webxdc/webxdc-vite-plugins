@@ -1,14 +1,14 @@
 const buildXDC = require("./build_xdc").buildXDC;
 const eruda = require("./eruda").eruda;
 const injectScript = require("./inject_script").injectScript;
-const injectWebxdc = require("./inject_webxdc").injectWebxdc;
+const mockWebxdc = require("./mock_webxdc").mockWebxdc;
 const legacy = require("./legacy").legacy;
 const webxdcScores = require("./webxdc_scores").webxdcScores;
 
 exports.buildXDC = buildXDC;
 exports.eruda = eruda;
 exports.injectScript = injectScript;
-exports.injectWebxdc = injectWebxdc;
+exports.mockWebxdc = mockWebxdc;
 exports.legacy = legacy;
 exports.webxdcScores = webxdcScores;
 
@@ -19,7 +19,7 @@ exports.webxdcScores = webxdcScores;
  */
 exports.webxdcViteConfig = function (options = {}) {
   options = Object.assign(
-    { plugins: [buildXDC(), eruda(), legacy(), injectWebxdc()] },
+    { plugins: [buildXDC(), eruda(), legacy(), mockWebxdc()] },
     options
   );
   return options;

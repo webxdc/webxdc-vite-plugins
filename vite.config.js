@@ -3,7 +3,7 @@
 import {
   buildXDC,
   eruda,
-  injectWebxdc,
+  mockWebxdc,
   legacy,
   injectScript,
   webxdcScores,
@@ -15,7 +15,7 @@ export default defineConfig({
   plugins: [
     buildXDC(),
     eruda(),
-    injectWebxdc("./emulator/webxdc.js"),
+    mockWebxdc("./emulator/webxdc.js"),
     legacy(),
   ],
 });
