@@ -1,21 +1,14 @@
 {
   "name": "webxdc-vite-plugins",
   "version": "0.1.0",
-  "type": "module",
   "scripts": {
     "dev": "vite --port 3000",
     "format": "prettier --write .",
     "check": "prettier --check .",
     "build": "vite build"
   },
-  "module": "src/index.js",
+  "main": "src/index.js",
   "typings": "./emulator/webxdc.d.ts",
-  "exports": {
-    ".": {
-      "import": "./src/index.js"
-    },
-    "./emulator/webxdc.js": "./emulator/webxdc.js"
-  },
   "dependencies": {
     "@vitejs/plugin-legacy": "^4.0.2",
     "eruda": "^3.0.0",
@@ -28,8 +21,5 @@
   "devDependencies": {
     "prettier": "2.8.8",
     "vite": "4.4.9"
-  },
-  "prettier": {
-    "printWidth": 120
   }
 }

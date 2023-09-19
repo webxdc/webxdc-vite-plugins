@@ -1,18 +1,23 @@
-import buildXDC from "./build_xdc";
-import eruda from "./eruda";
-import injectScript from "./inject_script";
-import injectWebxdc from "./inject_webxdc";
-import legacy from "./legacy";
-import webxdcScores from "./webxdc_scores";
+const buildXDC =require("./build_xdc").buildXDC;
+const eruda = require("./eruda").eruda;
+const injectScript = require("./inject_script").injectScript;
+const injectWebxdc = require("./inject_webxdc").injectWebxdc;
+const legacy = require("./legacy").legacy;
+const webxdcScores = require("./webxdc_scores").webxdcScores;
 
-export { buildXDC, eruda, injectScript, injectWebxdc, legacy, webxdcScores };
+exports.buildXDC = buildXDC;
+exports.eruda = eruda;
+exports.injectScript = injectScript;
+exports.injectWebxdc = injectWebxdc;
+exports.legacy = legacy;
+exports.webxdcScores = webxdcScores;
 
 /**
  * Returns the recommended Vite config for a Webxdc app.
  *
  * @returns The recommended Vite config for a Webxdc app.
  */
-export function webxdcViteConfig(options = {}) {
+exports.webxdcViteConfig = function(options = {}) {
   options = Object.assign({ plugins: [buildXDC(), eruda(), legacy(), injectWebxdc()] }, options);
   return options;
 }

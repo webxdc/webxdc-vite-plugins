@@ -1,8 +1,8 @@
-import { readFileSync } from "node:fs";
+const readFileSync = require("node:fs").readFileSync;
 
 // inject webxdc-scores lib if a tag with src="webxdc-scores.js" is present in index.html
-export default function webxdcScores() {
-  const scriptSrc = readFileSync("./node_modules/webxdc-scores/dist/webxdc-scores.umd.js", "utf-8");
+exports.webxdcScores = function() {
+  const scriptSrc = readFileSync(require.resolve('webxdc-scores'), "utf-8");
   return {
     name: "vite-plugin-webxdc-scores",
     apply: "serve",

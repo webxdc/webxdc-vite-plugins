@@ -1,7 +1,7 @@
-import { readFileSync } from "node:fs";
+const readFileSync = require("node:fs").readFileSync;
 
 // inject a webxdc.js emulator in development mode to fake webxdc API in your browser
-export default function webxdcJS(path = "./node_modules/webxdc-vite-plugins/emulator/webxdc.js") {
+exports.injectWebxdc = function(path = "./node_modules/webxdc-vite-plugins/emulator/webxdc.js") {
   const scriptSrc = readFileSync(path, "utf-8");
   return {
     name: "vite-plugin-webxdc-js",

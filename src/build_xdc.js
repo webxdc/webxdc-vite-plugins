@@ -1,7 +1,7 @@
-import zipPack from "vite-plugin-zip-pack";
+const zipPack = require("vite-plugin-zip-pack").default;
 
 // package your app as .xdc file on build
-export default function buildXDC(opts = {}) {
+exports.buildXDC = function(opts = {}) {
   opts = Object.assign({ outDir: "dist-xdc", outFileName: "app.xdc" }, opts);
   return zipPack(opts);
 }
