@@ -12,15 +12,15 @@
   "typings": "./emulator/webxdc.d.ts",
   "dependencies": {
     "@vitejs/plugin-legacy": "^4.0.2",
-    "concurrently": "^8.1.0",
     "eruda": "^3.0.0",
-    "vite-plugin-zip-pack": "^1.0.5",
-    "webxdc-dev": "^0.17.0"
+    "vite-plugin-zip-pack": "^1.0.5"
   },
   "peerDependencies": {
     "vite": "^4.0.0"
   },
   "devDependencies": {
+    "webxdc-dev": "^0.17.0",
+    "concurrently": "^8.1.0",
     "prettier": "2.8.8",
     "vite": "4.4.9"
   }

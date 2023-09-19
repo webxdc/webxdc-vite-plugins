@@ -8,7 +8,10 @@
   <body>
     <h1>Hello World</h1>
     <script>
-     window.onload = () => window.webxdc.sendUpdate({payload: "hello from " + window.webxdc.selfName});
+      window.onload = () =>
+        window.webxdc.sendUpdate({
+          payload: "hello from " + window.webxdc.selfName,
+        });
     </script>
   </body>
 </html>

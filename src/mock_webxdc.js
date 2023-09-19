@@ -8,13 +8,13 @@ exports.mockWebxdc = function (
   return {
     name: "vite-plugin-mock-webxdc",
     configureServer(server) {
-        server.middlewares.use((req, res, next) => {
-            if (req.url === "/webxdc.js") {
-                res.end(scriptSrc);
-            } else {
-                next();
-            }
-        });
+      server.middlewares.use((req, res, next) => {
+        if (req.url === "/webxdc.js") {
+          res.end(scriptSrc);
+        } else {
+          next();
+        }
+      });
     },
   };
 };
