@@ -7,7 +7,7 @@ export default function webxdcScores() {
     name: "vite-plugin-webxdc-scores",
     apply: "serve",
     transformIndexHtml(html) {
-      return html.replace(/<script src="webxdc-scores.js"><\/sript>/, `<script>${scriptSrc}</script>`);
+      return html.replace(/<script src="webxdc-scores.js"><\/script>/, `<script>${scriptSrc}</script>`);
     },
   };
 }

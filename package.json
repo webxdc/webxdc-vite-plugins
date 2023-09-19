@@ -3,17 +3,17 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "dev": "vite --port 3000",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "check": "prettier --check .",
+    "build": "vite build"
   },
-  "main": "src/index.js",
   "module": "src/index.js",
   "typings": "./emulator/webxdc.d.ts",
   "exports": {
-    "." {
-        "import": "./src/index.js",
-      },
-    "types": "./emulator/webxdc.d.ts",
+    ".": {
+      "import": "./src/index.js"
+    },
     "./emulator/webxdc.js": "./emulator/webxdc.js"
   },
   "dependencies": {
