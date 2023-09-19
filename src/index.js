@@ -1,4 +1,4 @@
-const buildXDC =require("./build_xdc").buildXDC;
+const buildXDC = require("./build_xdc").buildXDC;
 const eruda = require("./eruda").eruda;
 const injectScript = require("./inject_script").injectScript;
 const injectWebxdc = require("./inject_webxdc").injectWebxdc;
@@ -17,7 +17,10 @@ exports.webxdcScores = webxdcScores;
  *
  * @returns The recommended Vite config for a Webxdc app.
  */
-exports.webxdcViteConfig = function(options = {}) {
-  options = Object.assign({ plugins: [buildXDC(), eruda(), legacy(), injectWebxdc()] }, options);
+exports.webxdcViteConfig = function (options = {}) {
+  options = Object.assign(
+    { plugins: [buildXDC(), eruda(), legacy(), injectWebxdc()] },
+    options
+  );
   return options;
-}
+};

@@ -1,8 +1,8 @@
 const readFileSync = require("node:fs").readFileSync;
 
 // inject eruda dev tools in your app for debugging in end devices if NODE_ENV=debug is set
-exports.eruda = function(debug = undefined) {
-  const erudaSrc = readFileSync(require.resolve('eruda'), "utf-8");
+exports.eruda = function (debug = undefined) {
+  const erudaSrc = readFileSync(require.resolve("eruda"), "utf-8");
   return {
     name: "vite-plugin-eruda",
     apply: "build",
@@ -38,4 +38,4 @@ exports.eruda = function(debug = undefined) {
       }
     },
   };
-}
+};

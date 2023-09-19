@@ -2,7 +2,7 @@ const readFileSync = require("node:fs").readFileSync;
 
 // given a path to script file, inject it in the index.html.
 // apply can be "serve" or "build" if you want to only inject in build or development stage
-exports.injectScript = function(path, apply = null) {
+exports.injectScript = function (path, apply = null) {
   const scriptSrc = readFileSync(path, "utf-8");
   const plugin = {
     name: "vite-plugin-inject-script",
@@ -24,4 +24,4 @@ exports.injectScript = function(path, apply = null) {
     plugin["apply"] = apply;
   }
   return plugin;
-}
+};
