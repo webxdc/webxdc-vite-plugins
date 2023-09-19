@@ -10,8 +10,10 @@
   "module": "src/index.js",
   "typings": "./emulator/webxdc.d.ts",
   "exports": {
+    "." {
+        "import": "./src/index.js",
+      },
     "types": "./emulator/webxdc.d.ts",
-    "import": "./src/index.js",
     "./emulator/webxdc.js": "./emulator/webxdc.js"
   },
   "dependencies": {
