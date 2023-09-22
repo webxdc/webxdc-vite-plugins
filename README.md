@@ -51,7 +51,6 @@ import {
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  build: getDefaultViteBuildOptions(),
   plugins: [buildXDC(), eruda(), mockWebxdc()],
 });
 ```
