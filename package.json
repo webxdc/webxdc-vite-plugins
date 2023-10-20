@@ -12,8 +12,7 @@
   "dependencies": {
     "@vitejs/plugin-legacy": "^4.0.2",
     "eruda": "^3.0.0",
-    "vite-plugin-zip-pack": "^1.0.5",
-    "webxdc-types": "^1.0.1"
+    "vite-plugin-zip-pack": "^1.0.5"
   },
   "peerDependencies": {
     "vite": "^4.0.0"

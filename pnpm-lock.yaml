@@ -14,9 +14,6 @@ dependencies:
   vite-plugin-zip-pack:
     specifier: ^1.0.5
     version: 1.0.6(vite@4.4.9)
-  webxdc-types:
-    specifier: ^1.0.1
-    version: 1.0.1
 
 devDependencies:
   concurrently:
@@ -2880,10 +2877,6 @@ packages:
       - supports-color
       - utf-8-validate
     dev: true
-
-  /webxdc-types@1.0.1:
-    resolution: {integrity: sha512-voocssWnUiMoJoicPWmCKnjd6OG8TNuUq+5n9+0gMSBMg0h1KxapnN9Vq6WssK0jhKcGBSZvcQf8tGK+X88IaQ==}
-    dev: false
 
   /whatwg-url@5.0.0:
     resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
