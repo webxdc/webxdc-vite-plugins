@@ -1,6 +1,6 @@
 {
   "name": "webxdc-vite-plugins",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "scripts": {
     "dev-mini": "vite --port 3000",
     "dev": "concurrently \"npm run dev-mini\" \"webxdc-dev run http://localhost:3000\"",
