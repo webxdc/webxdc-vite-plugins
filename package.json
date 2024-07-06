@@ -8,6 +8,7 @@
     "check": "prettier --check .",
     "build": "vite build"
   },
+  "types": "webxdc.d.ts",
   "main": "src/index.js",
   "dependencies": {
     "@vitejs/plugin-legacy": "^4.0.2",
