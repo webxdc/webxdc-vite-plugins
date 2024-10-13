@@ -1,6 +1,6 @@
 {
   "name": "webxdc-vite-plugins",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "scripts": {
     "dev-mini": "vite --port 3000",
     "dev": "concurrently \"npm run dev-mini\" \"webxdc-dev run http://localhost:3000\"",
@@ -13,15 +13,15 @@
   "dependencies": {
     "@vitejs/plugin-legacy": "^5.4.2",
     "eruda": "^3.0.0",
-    "vite-plugin-zip-pack": "^1.0.5"
+    "vite-plugin-zip-pack": "^1.2.4"
   },
   "peerDependencies": {
     "vite": "^5.0.0"
   },
   "devDependencies": {
-    "concurrently": "^8.1.0",
-    "prettier": "2.8.8",
-    "vite": "4.4.9",
+    "concurrently": "^9.0.1",
+    "prettier": "3.3.3",
+    "vite": "5.4.8",
     "webxdc-dev": "^0.17.0"
   }
 }
