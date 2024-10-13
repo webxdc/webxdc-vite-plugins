@@ -2,8 +2,6 @@
   "name": "webxdc-vite-plugins",
   "version": "0.3.0",
   "scripts": {
-    "dev-mini": "vite --port 3000",
-    "dev": "concurrently \"npm run dev-mini\" \"webxdc-dev run http://localhost:3000\"",
     "format": "prettier --write .",
     "check": "prettier --check .",
     "build": "vite build"
@@ -19,9 +17,7 @@
     "vite": "^5.0.0"
   },
   "devDependencies": {
-    "concurrently": "^9.0.1",
     "prettier": "3.3.3",
-    "vite": "5.4.8",
-    "webxdc-dev": "^0.17.0"
+    "vite": "5.4.8"
   }
 }

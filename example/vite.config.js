@@ -1,4 +1,4 @@
-// vite configuration, just for testing!
+// example vite configuration
 
 import {
   buildXDC,
@@ -7,10 +7,10 @@ import {
   legacy,
   injectScript,
   webxdcScores,
-} from "./src/index";
+} from "webxdc-vite-plugins";
 import { defineConfig } from "vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [buildXDC(), eruda(), mockWebxdc("./emulator/webxdc.js"), legacy()],
+  plugins: [buildXDC(), eruda(), mockWebxdc(), legacy()],
 });
