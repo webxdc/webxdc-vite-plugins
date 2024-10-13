@@ -11,7 +11,7 @@
   "types": "webxdc.d.ts",
   "main": "src/index.js",
   "dependencies": {
-    "@vitejs/plugin-legacy": "^4.0.2",
+    "@vitejs/plugin-legacy": "^5.4.2",
     "eruda": "^3.0.0",
     "vite-plugin-zip-pack": "^1.0.5"
   },
