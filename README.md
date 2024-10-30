@@ -11,7 +11,7 @@ Setup a new Vite project using this template: <https://github.com/webxdc/webxdc-
 Alternatively, for an existing vite project add `webxdc-vite-plugins`:
 
 ```bash
-npm install --save-dev webxdc-vite-plugins
+npm install --save-dev "github:webxdc/webxdc-vite-plugins"
 ```
 
 Then update your Vite configuration as needed. See below for example Vite configurations.
