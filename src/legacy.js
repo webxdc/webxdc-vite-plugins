@@ -4,7 +4,7 @@ const _legacy = require("@vitejs/plugin-legacy");
 exports.legacy = function (opts = {}) {
   opts = Object.assign(
     { targets: ["ChromeAndroid >=37", "iOS >=11"], renderModernChunks: false },
-    opts
+    opts,
   );
   return _legacy(opts);
 };

@@ -1,23 +1,17 @@
 {
-  "name": "webxdc-vite-plugins",
+  "name": "@webxdc/vite-plugins",
   "version": "0.3.0",
   "scripts": {
-    "format": "prettier --write .",
-    "check": "prettier --check .",
-    "build": "vite build"
+    "fix": "prettier --write .",
+    "check": "prettier --check ."
   },
-  "types": "webxdc.d.ts",
   "main": "src/index.js",
   "dependencies": {
-    "@vitejs/plugin-legacy": "^5.4.2",
-    "eruda": "^3.0.0",
+    "@vitejs/plugin-legacy": "^5.4.3",
+    "eruda": "^3.4.1",
     "vite-plugin-zip-pack": "^1.2.4"
   },
-  "peerDependencies": {
-    "vite": "^5.0.0"
-  },
   "devDependencies": {
-    "prettier": "3.3.3",
-    "vite": "5.4.8"
+    "prettier": "3.3.3"
   }
 }
