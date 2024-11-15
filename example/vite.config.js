@@ -1,12 +1,6 @@
 // example vite configuration
 
-import {
-  buildXDC,
-  eruda,
-  mockWebxdc,
-  legacy,
-  injectScript,
-} from "@webxdc/vite-plugins";
+import { buildXDC, eruda, mockWebxdc, legacy } from "@webxdc/vite-plugins";
 import { defineConfig } from "vite";
 
 // https://vitejs.dev/config/

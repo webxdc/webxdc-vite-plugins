@@ -1,19 +1,14 @@
-const buildXDC = require("./build_xdc").buildXDC;
-const eruda = require("./eruda").eruda;
-const mockWebxdc = require("./mock_webxdc").mockWebxdc;
-const legacy = require("./legacy").legacy;
-
-exports.buildXDC = buildXDC;
-exports.eruda = eruda;
-exports.mockWebxdc = mockWebxdc;
-exports.legacy = legacy;
+import { buildXDC } from "./build-xdc.js";
+import { eruda } from "./eruda.js";
+import { mockWebxdc } from "./mock-webxdc.js";
+import { legacy } from "./legacy.js";
 
 /**
  * The recommended Vite config for a Webxdc app.
  *
  * @returns The recommended Vite config for a Webxdc app.
  */
-exports.webxdcViteConfig = function (options = {}) {
+export const webxdcViteConfig = function (options = {}) {
   options = Object.assign(
     { plugins: [buildXDC(), eruda(), legacy(), mockWebxdc()] },
     options,
@@ -26,10 +21,12 @@ exports.webxdcViteConfig = function (options = {}) {
  *
  * @returns Vite config for a Webxdc app.
  */
-exports.webxdcViteConfigNoLegacy = function (options = {}) {
+export const webxdcViteConfigNoLegacy = function (options = {}) {
   options = Object.assign(
     { plugins: [buildXDC(), eruda(), mockWebxdc()] },
     options,
   );
   return options;
 };
+
+export { buildXDC, eruda, mockWebxdc, legacy };

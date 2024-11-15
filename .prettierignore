@@ -1,4 +1,4 @@
 example/dist
 example/dist-xdc
-emulator/webxdc.js
+src/webxdc.js
 pnpm-lock.yaml

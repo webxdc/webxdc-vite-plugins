@@ -58,4 +58,4 @@ export default defineConfig({
 });
 ```
 
-For a full example check the [example](https://github.com/webxdc/vite-plugins/tree/master/example) folder.
+For a full example check the [example](https://github.com/webxdc/vite-plugins/tree/main/example) folder.

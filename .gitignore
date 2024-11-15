@@ -3,6 +3,8 @@ pnpm-debug.log*
 .pnpm-debug.log
 
 node_modules
+*~
+
+example/pnpm-lock.yaml
 example/dist
 example/dist-xdc
-*~

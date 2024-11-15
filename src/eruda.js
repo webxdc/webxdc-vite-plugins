@@ -1,7 +1,10 @@
-const readFileSync = require("node:fs").readFileSync;
+import { readFileSync } from "node:fs";
+import { createRequire } from "node:module";
+
+const require = createRequire(import.meta.url);
 
 // inject eruda dev tools in your app for debugging in end devices if NODE_ENV=debug is set
-exports.eruda = function (debug = undefined) {
+export function eruda(debug = undefined) {
   const erudaSrc = readFileSync(require.resolve("eruda"), "utf-8");
   return {
     name: "vite-plugin-eruda",
@@ -38,4 +41,4 @@ exports.eruda = function (debug = undefined) {
       }
     },
   };
-};
+}

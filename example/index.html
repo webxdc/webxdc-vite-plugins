@@ -9,9 +9,13 @@
     <h1>Hello World</h1>
     <script>
       window.onload = () =>
-        window.webxdc.sendUpdate({
-          payload: "hello from " + window.webxdc.selfName,
-        });
+        window.webxdc.sendUpdate(
+          {
+            payload: null,
+            info: "hello from " + window.webxdc.selfName,
+          },
+          "",
+        );
     </script>
   </body>
 </html>

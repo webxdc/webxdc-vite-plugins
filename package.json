@@ -1,14 +1,38 @@
 {
   "name": "@webxdc/vite-plugins",
+  "description": "Collection of vite plugins for webxdc development",
   "version": "0.3.0",
+  "license": "MIT",
+  "author": "adbenitez",
+  "keywords": [
+    "webxdc",
+    "deltachat"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webxdc/vite-plugins.git"
+  },
+  "bugs": {
+    "url": "https://github.com/webxdc/vite-plugins/issues"
+  },
+  "homepage": "https://github.com/webxdc/vite-plugins",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "source": "./src/index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/index.js"
+    }
+  },
   "scripts": {
     "fix": "prettier --write .",
     "check": "prettier --check ."
   },
-  "main": "src/index.js",
   "dependencies": {
     "@vitejs/plugin-legacy": "^5.4.3",
     "eruda": "^3.4.1",
+    "terser": "^5.36.0",
     "vite-plugin-zip-pack": "^1.2.4"
   },
   "devDependencies": {
