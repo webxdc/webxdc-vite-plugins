@@ -8,8 +8,8 @@
   },
   "devDependencies": {
     "concurrently": "latest",
-    "vite": "last",
-    "@webxdc/webxdc-dev": "last",
+    "vite": "latest",
+    "@webxdc/webxdc-dev": "latest",
     "@webxdc/vite-plugins": "latest"
   }
 }
