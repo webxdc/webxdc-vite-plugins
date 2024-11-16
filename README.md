@@ -63,3 +63,21 @@ export default defineConfig({
 ```
 
 For a full example check the [example](https://github.com/webxdc/vite-plugins/tree/main/example) folder.
+
+## Troubleshooting
+
+if you get this error when using vite:
+
+```
+✘ [ERROR] Failed to resolve "@webxdc/vite-plugins". This package is ESM only but it was tried to load by `require`.
+```
+
+to fix it you need to set in your `package.json`:
+
+```json
+{
+  ...
+  "type": "module",
+  ...
+}
+```
