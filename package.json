@@ -23,6 +23,9 @@
   "exports": {
     ".": {
       "import": "./src/index.js"
+    },
+    "./emulator": {
+      "import": "./src/webxdc.js"
     }
   },
   "scripts": {
