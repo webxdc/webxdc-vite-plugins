@@ -52,6 +52,43 @@ class RealtimeListener {
 //@ts-check
 /** @type {import('./webxdc').Webxdc<any>} */
 window.webxdc = (() => {
+  async function loadIcon() {
+    const img = new Image();
+    try {
+      img.src = "icon.png";
+      await img.decode();
+      window.__webxdc_icon = "icon.png"
+    } catch (e) {
+      img.src = "icon.jpg";
+      try {
+        await img.decode();
+        window.__webxdc_icon = "icon.jpg"
+      } catch (e) {
+      }
+    }
+  }
+  loadIcon()
+
+  function sendNotification(text) {
+    if (!("Notification" in window)) {
+      console.log("[NOTIFICATION] " + text);
+      return;
+    }
+
+    const opts = {body: text, icon: window.__webxdc_icon};
+    if (Notification.permission === "granted") {
+      new Notification(window.webxdc.selfName, opts);
+    } else {
+      Notification.requestPermission((permission) => {
+        if (Notification.permission === "granted") {
+          new Notification(window.webxdc.selfName, opts);
+        } else {
+          console.log("[NOTIFICATION] " + text);
+        }
+      });
+    }
+  }
+
   var updateListener = (_) => {};
   /**
    * @type {RT | null}
@@ -66,6 +103,13 @@ window.webxdc = (() => {
       var update = updates[updates.length - 1];
       update.max_serial = updates.length;
       console.log("[Webxdc] " + JSON.stringify(update));
+      if (update.notify && update._sender !== window.webxdc.selfAddr) {
+        if (update.notify[window.webxdc.selfAddr]) {
+          sendNotification(update.notify[window.webxdc.selfAddr])
+        } else if ((update.notify["*"])) {
+          sendNotification(update.notify["*"])
+        }
+      }
       updateListener(update);
     } else if (event.key === ephemeralUpdateKey) {
       var [sender, update] = JSON.parse(event.newValue);
@@ -123,10 +167,11 @@ window.webxdc = (() => {
         document: update.document,
         serial: serial,
       };
+      console.log(`[Webxdc] ${JSON.stringify(_update)}`);
+      _update._sender = window.webxdc.selfAddr;
       updates.push(_update);
       window.localStorage.setItem(updatesKey, JSON.stringify(updates));
       _update.max_serial = serial;
-      console.log(`[Webxdc] ${JSON.stringify(_update)}`);
       updateListener(_update);
     },
     sendToChat: async (content) => {
@@ -302,11 +347,11 @@ window.alterXdcApp = () => {
       "<div>";
     var controlPanel = root.firstChild;
 
-    function loadIcon(name) {
-      var tester = new Image();
-      tester.onload = () => {
-        root.innerHTML =
-          '<img src="' + name + '" style="' + styleAppIcon + '">';
+    async function loadIcon() {
+      const img = new Image();
+      img.style = styleAppIcon;
+      img.onload = () => {
+        root.append(img);
         controlPanel.insertBefore(root.firstChild, controlPanel.childNodes[1]);
 
         var pageIcon = document.createElement("link");
@@ -314,10 +359,17 @@ window.alterXdcApp = () => {
         pageIcon.href = name;
         document.head.append(pageIcon);
       };
-      tester.src = name;
+      try {
+        img.src = "icon.png";
+        await img.decode();
+        window.__webxdc_icon = "icon.png"
+      } catch (e) {
+        img.src = "icon.jpg";
+        await img.decode();
+        window.__webxdc_icon = "icon.jpg"
+      }
     }
-    loadIcon("icon.png");
-    loadIcon("icon.jpg");
+    loadIcon();
 
     document.getElementsByTagName("body")[0].append(controlPanel);
   }

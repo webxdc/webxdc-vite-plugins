@@ -1,3 +1,4 @@
+import secureContext from "@vitejs/plugin-basic-ssl";
 import { buildXDC } from "./build-xdc.js";
 import { eruda } from "./eruda.js";
 import { mockWebxdc } from "./mock-webxdc.js";
@@ -10,7 +11,7 @@ import { legacy } from "./legacy.js";
  */
 export const webxdcViteConfig = function (options = {}) {
   options = Object.assign(
-    { plugins: [buildXDC(), eruda(), legacy(), mockWebxdc()] },
+    { plugins: [buildXDC(), eruda(), legacy(), mockWebxdc(), secureContext()] },
     options,
   );
   return options;
@@ -23,10 +24,10 @@ export const webxdcViteConfig = function (options = {}) {
  */
 export const webxdcViteConfigNoLegacy = function (options = {}) {
   options = Object.assign(
-    { plugins: [buildXDC(), eruda(), mockWebxdc()] },
+    { plugins: [buildXDC(), eruda(), mockWebxdc(), secureContext()] },
     options,
   );
   return options;
 };
 
-export { buildXDC, eruda, mockWebxdc, legacy };
+export { buildXDC, eruda, mockWebxdc, legacy, secureContext };
