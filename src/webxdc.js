@@ -82,6 +82,8 @@ window.webxdc = (() => {
 
   var params = new URLSearchParams(window.location.hash.substr(1));
   return {
+    sendUpdateInterval: 1000,
+    sendUpdateMaxSize: 999999,
     selfAddr: params.get("addr") || "device0@local.host",
     selfName: params.get("name") || "device0",
     setUpdateListener: (cb, serial = 0) => {
@@ -109,22 +111,22 @@ window.webxdc = (() => {
       console.log("[Webxdc] WARNING: getAllUpdates() is deprecated.");
       return Promise.resolve([]);
     },
-    sendUpdate: (update, description) => {
+    sendUpdate: (update) => {
       var updates = getUpdates();
       var serial = updates.length + 1;
       var _update = {
         payload: update.payload,
         summary: update.summary,
         info: update.info,
+        notify: update.notify,
+        href: update.href,
         document: update.document,
         serial: serial,
       };
       updates.push(_update);
       window.localStorage.setItem(updatesKey, JSON.stringify(updates));
       _update.max_serial = serial;
-      console.log(
-        '[Webxdc] description="' + description + '", ' + JSON.stringify(_update)
-      );
+      console.log(`[Webxdc] ${JSON.stringify(_update)}`);
       updateListener(_update);
     },
     sendToChat: async (content) => {
