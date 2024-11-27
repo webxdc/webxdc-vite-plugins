@@ -30,7 +30,7 @@
   },
   "scripts": {
     "fix": "prettier --write .",
-    "check": "prettier --check ."
+    "check": "prettier --check . && tsc --noEmit --allowJs --lib es2017,dom ./src/webxdc.js"
   },
   "dependencies": {
     "@vitejs/plugin-basic-ssl": "^1.1.0",
@@ -40,7 +40,9 @@
     "vite-plugin-zip-pack": "^1.2.4"
   },
   "devDependencies": {
-    "prettier": "3.3.3",
-    "vite": "^6.0.0"
+    "@webxdc/types": "latest",
+    "prettier": "latest",
+    "typescript": "latest",
+    "vite": "latest"
   }
 }
