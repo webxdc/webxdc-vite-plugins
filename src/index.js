@@ -10,9 +10,15 @@ import { legacy } from "./legacy.js";
  * @returns The recommended Vite config for a Webxdc app.
  */
 export const webxdcViteConfig = function (options = {}) {
-  options = Object.assign(
-    { plugins: [buildXDC(), eruda(), legacy(), mockWebxdc(), secureContext()] },
-    options,
+  if (!options.plugins) {
+    options.plugins = [];
+  }
+  options.plugins.push(
+    buildXDC(),
+    eruda(),
+    legacy(),
+    mockWebxdc(),
+    secureContext(),
   );
   return options;
 };
@@ -23,10 +29,10 @@ export const webxdcViteConfig = function (options = {}) {
  * @returns Vite config for a Webxdc app.
  */
 export const webxdcViteConfigNoLegacy = function (options = {}) {
-  options = Object.assign(
-    { plugins: [buildXDC(), eruda(), mockWebxdc(), secureContext()] },
-    options,
-  );
+  if (!options.plugins) {
+    options.plugins = [];
+  }
+  options.plugins.push(buildXDC(), eruda(), mockWebxdc(), secureContext());
   return options;
 };
 
