@@ -17,10 +17,10 @@ Collection of [Vite](https://vitejs.dev/) plugins and utilities for [webxdc](htt
 
 ## Getting Started
 
-Add `@webxdc/vite-plugins` library as development dependency:
+Scaffolding your first webxdc project:
 
 ```bash
-npm install --save-dev "@webxdc/vite-plugins"
+npm create @webxdc/vite-plugins@latest
 ```
 
 Then update your Vite configuration as needed. See below for example Vite configurations.
